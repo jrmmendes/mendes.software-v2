@@ -1,0 +1,83 @@
+:root {
+  --primary: #070707;
+  --roundness: 0.45rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16pt;
+}
+:root * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--primary);
+  color: white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.brand-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.brand-image > .icon {
+  font-size: 9em;
+}
+.brand-image .mail {
+  color: inherit;
+  color: #a8a8a8;
+}
+.brand-image .mail:hover, .brand-image .mail:active, .brand-image .mail:visited {
+  color: inherit;
+}
+
+.section {
+  border: 1px solid white;
+  border-radius: var(--roundness);
+  width: 90dvw;
+  max-width: 1200px;
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section .brand-image {
+  margin-bottom: 1em;
+}
+.section .link-list {
+  list-style: none;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section .link-list > li {
+  margin-top: 0.5em;
+  height: 1.5rem;
+}
+.section .link {
+  text-decoration: none;
+  color: inherit;
+  transition: font-size 180ms ease-in-out;
+}
+.section .link:hover, .section .link:active, .section .link:visited {
+  color: inherit;
+}
+.section .link:hover {
+  transition: font-size 180ms ease-in-out;
+}
+.section .link:hover {
+  font-size: 1.1em;
+}
+
+/*# sourceMappingURL=style.css.map */

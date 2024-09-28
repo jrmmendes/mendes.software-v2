@@ -1,0 +1,100 @@
+:root {
+  --primary: #070707;
+
+  --roundness: 0.45rem;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16pt;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin centralized-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin font-size-hover-transition {
+  transition: font-size 180ms ease-in-out;
+
+  &:hover {
+    transition: font-size 180ms ease-in-out;
+  }
+}
+
+@mixin reset-link {
+  color: inherit;
+  &:hover,&:active, &:visited {
+    color: inherit;
+  }
+}
+
+body {
+  background: var(--primary);
+  color: white;
+}
+
+main {
+  @include centralized-flex;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.brand-image {
+  @include centralized-flex;
+  flex-direction: column;
+
+  >.icon {
+    font-size: 9em;
+  }
+
+  .mail {
+    @include reset-link;
+    color: #a8a8a8;
+  }
+}
+
+.section {
+
+  .brand-image {
+    margin-bottom: 1em;
+  }
+
+  border: 1px solid white;
+  border-radius: var(--roundness);
+  width: 90dvw;
+  max-width: 1200px;
+  height: 80dvh;
+
+
+  @include centralized-flex;
+  flex-direction: column;
+
+  .link-list {
+    list-style: none;
+    flex-direction: column;
+
+    @include centralized-flex;
+
+    >li {
+      margin-top: 0.5em;
+      height: 1.5rem;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    @include reset-link;
+
+    @include font-size-hover-transition;
+
+    &:hover {
+      font-size: 1.1em;
+    }
+  }
+}

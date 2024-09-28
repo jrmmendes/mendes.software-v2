@@ -1,0 +1,14 @@
+
+.icon-thumbs-up:before { content: '\e800'; } /* '' */
+.icon-thumbs-down:before { content: '\e801'; } /* '' */
+.icon-link:before { content: '\e802'; } /* '' */
+.icon-jm-logo:before { content: '\e803'; } /* '' */
+.icon-down-open:before { content: '\e804'; } /* '' */
+.icon-heart:before { content: '\e805'; } /* '' */
+.icon-heart-empty:before { content: '\e806'; } /* '' */
+.icon-mail:before { content: '\e807'; } /* '' */
+.icon-bookmark:before { content: '\e808'; } /* '' */
+.icon-bookmark-empty:before { content: '\f097'; } /* '' */
+.icon-code:before { content: '\f121'; } /* '' */
+.icon-thumbs-up-alt:before { content: '\f164'; } /* '' */
+.icon-thumbs-down-alt:before { content: '\f165'; } /* '' */
