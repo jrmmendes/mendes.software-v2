@@ -80,4 +80,10 @@ main {
   font-size: 1.1em;
 }
 
+.github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
