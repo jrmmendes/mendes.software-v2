@@ -1,11 +1,11 @@
 :root {
-  --primary: #070707;
+  --primary: #1C1F20;
 
   --roundness: 0.45rem;
 
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 16pt;
+  font-size: 15pt;
 
   * {
     margin: 0;
@@ -55,6 +55,7 @@ main {
 
   .mail {
     @include reset-link;
+    font-size: 0.8em;
     color: #a8a8a8;
   }
 }
@@ -77,12 +78,14 @@ main {
 
   .link-list {
     list-style: none;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 15em;
 
     @include centralized-flex;
 
     >li {
-      margin-top: 0.5em;
+      margin: 0.2em 0.5em;
       height: 1.5rem;
     }
   }
