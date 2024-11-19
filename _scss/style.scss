@@ -1,6 +1,7 @@
 :root {
   --primary: #1c1f20;
-
+  --light: #FFF;
+  --gray2: #BBB;
   --roundness: 0.45rem;
 
   font-family: "Roboto", sans-serif;
@@ -27,6 +28,11 @@
   }
 }
 
+@mixin section-width {
+  width: 90dvw;
+  max-width: 1200px;
+}
+
 @mixin reset-link {
   color: inherit;
   &:hover,
@@ -34,6 +40,12 @@
   &:visited {
     color: inherit;
   }
+}
+
+@mixin scrollbar-style {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray2) var(--primary);
+  scrollbar-base-color: var(--gray2);
 }
 
 body {
@@ -61,22 +73,8 @@ main {
     color: #a8a8a8;
   }
 }
-.card__gloss {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  transform: translateZ(1px);
-  z-index: 2;
-}
-.section {
-  background: rgb(0,0,1);
-  background: linear-gradient(103deg, rgba(0,0,1,1) 0%, var(--primary) 100%);
-  transform-style: preserve-3d;
-
-  transition: 0.1s;
+.hero-banner {
+  @include section-width;
   box-shadow: 20px 20px 75px rgba(0, 0, 0, 0.5);
 
   .brand-image {
@@ -85,9 +83,9 @@ main {
 
   border: 1px solid white;
   border-radius: var(--roundness);
-  width: 90dvw;
-  max-width: 1200px;
+
   height: 80dvh;
+  max-height: 80dvh;
 
   @include centralized-flex;
   flex-direction: column;
@@ -122,4 +120,68 @@ main {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.resume-section {
+  height: 80dvh;
+  max-height: 80dvh;
+  overflow-y: scroll;
+  
+  @include scrollbar-style;
+  
+  box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+  @include section-width;
+
+  h1,
+  h2,
+  h3 {
+    margin: 0.3em 0;
+  }
+
+  font-size: 12pt;
+
+  padding: 0 2em 1em;
+
+  > .title {
+    margin-top: 1em;
+    font-size: 1.6;
+    font-weight: 500;
+  }
+
+  > .resume-content {
+    margin-top: 1em;
+  }
+}
+
+.resume-content {
+  color: var(--gray2);
+  
+  > .title {
+    color: var(--light);
+    font-weight: 400;
+    font-size: 1.3em;
+  }
+}
+
+.content-info {
+  > .role {
+    font-weight: 400;
+    font-size: 0.9em;
+    color: var(--light);
+  }
+
+  > .stack {
+    font-weight: 400;
+    font-size: 0.9em;
+    color: var(--light);
+  }
+}
+
+.details-list {
+  padding-left: 1.5em;
+
+  > .detail {
+    margin: 0.5em 0;
+    font-size: 1em;
+  }
 }

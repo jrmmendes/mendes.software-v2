@@ -1,5 +1,7 @@
 :root {
   --primary: #1c1f20;
+  --light: #FFF;
+  --gray2: #BBB;
   --roundness: 0.45rem;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -41,23 +43,23 @@ main {
   color: inherit;
 }
 
-.section {
-  background: var(--primary);
-  box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
-  border: 1px solid white;
-  border-radius: var(--roundness);
+.hero-banner {
   width: 90dvw;
   max-width: 1200px;
+  box-shadow: 20px 20px 75px rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  border-radius: var(--roundness);
   height: 80dvh;
+  max-height: 80dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.section .brand-image {
+.hero-banner .brand-image {
   margin-bottom: 1em;
 }
-.section .link-list {
+.hero-banner .link-list {
   list-style: none;
   flex-direction: row;
   flex-wrap: wrap;
@@ -66,22 +68,22 @@ main {
   justify-content: center;
   align-items: center;
 }
-.section .link-list > li {
+.hero-banner .link-list > li {
   margin: 0.2em 0.5em;
   height: 1.5rem;
 }
-.section .link {
+.hero-banner .link {
   text-decoration: none;
   color: inherit;
   transition: font-size 180ms ease-in-out;
 }
-.section .link:hover, .section .link:active, .section .link:visited {
+.hero-banner .link:hover, .hero-banner .link:active, .hero-banner .link:visited {
   color: inherit;
 }
-.section .link:hover {
+.hero-banner .link:hover {
   transition: font-size 180ms ease-in-out;
 }
-.section .link:hover {
+.hero-banner .link:hover {
   font-size: 1.1em;
 }
 
@@ -89,6 +91,61 @@ main {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.resume-section {
+  height: 80dvh;
+  max-height: 80dvh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray2) var(--primary);
+  scrollbar-base-color: var(--gray2);
+  box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
+  width: 90dvw;
+  max-width: 1200px;
+  font-size: 12pt;
+  padding: 0 2em 1em;
+}
+.resume-section h1,
+.resume-section h2,
+.resume-section h3 {
+  margin: 0.3em 0;
+}
+.resume-section > .title {
+  margin-top: 1em;
+  font-size: 1.6;
+  font-weight: 500;
+}
+.resume-section > .resume-content {
+  margin-top: 1em;
+}
+
+.resume-content {
+  color: var(--gray2);
+}
+.resume-content > .title {
+  color: var(--light);
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.content-info > .role {
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--light);
+}
+.content-info > .stack {
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--light);
+}
+
+.details-list {
+  padding-left: 1.5em;
+}
+.details-list > .detail {
+  margin: 0.5em 0;
+  font-size: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
