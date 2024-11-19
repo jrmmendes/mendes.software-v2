@@ -104,7 +104,8 @@ main {
   width: 90dvw;
   max-width: 1200px;
   font-size: 12pt;
-  padding: 0 2em 1em;
+  box-sizing: border-box;
+  padding: 2em 4em 2em;
 }
 .resume-section h1,
 .resume-section h2,
@@ -146,6 +147,15 @@ main {
 .details-list > .detail {
   margin: 0.5em 0;
   font-size: 1em;
+}
+.details-list > .detail > .link {
+  color: white;
+}
+.details-list > .detail > .link:active, .details-list > .detail > .link:visited {
+  color: white;
+}
+.details-list > .detail > .link:hover {
+  color: var(--gray2);
 }
 
 /*# sourceMappingURL=style.css.map */
