@@ -1,7 +1,7 @@
 :root {
   --primary: #1c1f20;
-  --light: #FFF;
-  --gray2: #BBB;
+  --light: #fff;
+  --gray2: #bbb;
   --roundness: 0.45rem;
 
   font-family: "Roboto", sans-serif;
@@ -126,9 +126,9 @@ main {
   height: 80dvh;
   max-height: 80dvh;
   overflow-y: scroll;
-  
+
   @include scrollbar-style;
-  
+
   box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
   @include section-width;
 
@@ -141,6 +141,7 @@ main {
   font-size: 12pt;
   box-sizing: border-box;
 
+
   padding: 2em 4em 2em;
 
   > .title {
@@ -152,11 +153,17 @@ main {
   > .resume-content {
     margin-top: 1em;
   }
+  
+  @media (max-width: 800px) {
+    padding: 0 2em 0;
+    width: 100dvw;
+    height: 100dvh;
+  }
 }
 
 .resume-content {
   color: var(--gray2);
-  
+
   > .title {
     color: var(--light);
     font-weight: 400;
@@ -182,13 +189,14 @@ main {
   padding-left: 1.5em;
 
   > .detail {
-    >.link {
+    > .link {
       color: white;
-      &:active,&:visited {
-        color: white;  
+      &:active,
+      &:visited {
+        color: white;
       }
       &:hover {
-        color: var(--gray2)
+        color: var(--gray2);
       }
     }
     margin: 0.5em 0;
