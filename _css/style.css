@@ -25,22 +25,10 @@ main {
   height: 100dvh;
 }
 
-.brand-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.brand-image > .icon {
-  font-size: 9em;
-}
-.brand-image .mail {
-  color: inherit;
-  font-size: 0.8em;
-  color: #a8a8a8;
-}
-.brand-image .mail:hover, .brand-image .mail:active, .brand-image .mail:visited {
-  color: inherit;
+.github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .hero-banner {
@@ -87,10 +75,22 @@ main {
   font-size: 1.1em;
 }
 
-.github-ribbon {
-  position: absolute;
-  top: 0;
-  right: 0;
+.brand-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.brand-image > .icon {
+  font-size: 9em;
+}
+.brand-image .mail {
+  color: inherit;
+  font-size: 0.8em;
+  color: #a8a8a8;
+}
+.brand-image .mail:hover, .brand-image .mail:active, .brand-image .mail:visited {
+  color: inherit;
 }
 
 .resume-section {
@@ -126,7 +126,7 @@ main {
     width: 100dvw;
     height: 100dvh;
     max-height: 100dvh;
-    font-size: 16pt;
+    font-size: 14pt;
   }
 }
 

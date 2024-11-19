@@ -1,0 +1,34 @@
+
+@mixin centralized-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin font-size-hover-transition {
+  transition: font-size 180ms ease-in-out;
+
+  &:hover {
+    transition: font-size 180ms ease-in-out;
+  }
+}
+
+@mixin section-width {
+  width: 90dvw;
+  max-width: 1200px;
+}
+
+@mixin reset-link {
+  color: inherit;
+  &:hover,
+  &:active,
+  &:visited {
+    color: inherit;
+  }
+}
+
+@mixin scrollbar-style {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray2) var(--primary);
+  scrollbar-base-color: var(--gray2);
+}

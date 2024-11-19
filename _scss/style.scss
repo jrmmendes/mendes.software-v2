@@ -1,102 +1,31 @@
-:root {
-  --primary: #1c1f20;
-  --light: #fff;
-  --gray2: #bbb;
-  --roundness: 0.45rem;
+@use 'mixins';
+@use 'base';
+@use 'vendor';
 
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 15pt;
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-@mixin centralized-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin font-size-hover-transition {
-  transition: font-size 180ms ease-in-out;
-
-  &:hover {
-    transition: font-size 180ms ease-in-out;
-  }
-}
-
-@mixin section-width {
-  width: 90dvw;
-  max-width: 1200px;
-}
-
-@mixin reset-link {
-  color: inherit;
-  &:hover,
-  &:active,
-  &:visited {
-    color: inherit;
-  }
-}
-
-@mixin scrollbar-style {
-  scrollbar-width: thin;
-  scrollbar-color: var(--gray2) var(--primary);
-  scrollbar-base-color: var(--gray2);
-}
-
-body {
-  background: var(--primary);
-  color: white;
-}
-
-main {
-  @include centralized-flex;
-  width: 100dvw;
-  height: 100dvh;
-}
-
-.brand-image {
-  @include centralized-flex;
-  flex-direction: column;
-
-  > .icon {
-    font-size: 9em;
-  }
-
-  .mail {
-    @include reset-link;
-    font-size: 0.8em;
-    color: #a8a8a8;
-  }
-}
+// Hero Banner Section
 .hero-banner {
-  @include section-width;
+  @include mixins.section-width;
   box-shadow: 20px 20px 75px rgba(0, 0, 0, 0.5);
-
-  .brand-image {
-    margin-bottom: 1em;
-  }
-
   border: 1px solid white;
   border-radius: var(--roundness);
 
   height: 80dvh;
   max-height: 80dvh;
 
-  @include centralized-flex;
+  @include mixins.centralized-flex;
   flex-direction: column;
-
+  
+  .brand-image {
+    margin-bottom: 1em;
+  }
+  
   .link-list {
     list-style: none;
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 15em;
 
-    @include centralized-flex;
+    @include mixins.centralized-flex;
 
     > li {
       margin: 0.2em 0.5em;
@@ -106,9 +35,8 @@ main {
 
   .link {
     text-decoration: none;
-    @include reset-link;
-
-    @include font-size-hover-transition;
+    @include mixins.reset-link;
+    @include mixins.font-size-hover-transition;
 
     &:hover {
       font-size: 1.1em;
@@ -116,21 +44,31 @@ main {
   }
 }
 
-.github-ribbon {
-  position: absolute;
-  top: 0;
-  right: 0;
+.brand-image {
+  @include mixins.centralized-flex;
+  flex-direction: column;
+
+  > .icon {
+    font-size: 9em;
+  }
+
+  .mail {
+    @include mixins.reset-link;
+    font-size: 0.8em;
+    color: #a8a8a8;
+  }
 }
 
+// Resume Section
 .resume-section {
   height: 80dvh;
   max-height: 80dvh;
   overflow-y: scroll;
 
-  @include scrollbar-style;
+  @include mixins.scrollbar-style;
 
   box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
-  @include section-width;
+  @include mixins.section-width;
 
   h1,
   h2,
@@ -159,7 +97,7 @@ main {
     width: 100dvw;
     height: 100dvh;
     max-height: 100dvh;
-    font-size: 16pt;
+    font-size: 14pt;
   }
 }
 
@@ -190,8 +128,8 @@ main {
 .details-list {
   padding-left: 1.5em;
 
-  > .detail {
-    > .link {
+  >.detail {
+    >.link {
       color: white;
       &:active,
       &:visited {
