@@ -1,5 +1,5 @@
 :root {
-  --primary: #1C1F20;
+  --primary: #1c1f20;
   --roundness: 0.45rem;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -42,6 +42,8 @@ main {
 }
 
 .section {
+  background: var(--primary);
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
   border: 1px solid white;
   border-radius: var(--roundness);
   width: 90dvw;
