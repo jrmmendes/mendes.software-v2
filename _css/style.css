@@ -25,10 +25,35 @@ main {
   height: 100dvh;
 }
 
-.github-ribbon {
-  position: absolute;
+.forkme-ribbon {
+  position: fixed;
+  overflow: hidden;
+  box-sizing: border-box;
   top: 0;
   right: 0;
+  height: 10em;
+  width: 10em;
+}
+.forkme-ribbon > a {
+  box-sizing: border-box;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--light);
+  background: var(--primary);
+  padding: 0.7em 0;
+  top: 2.2em;
+  right: -3.2em;
+  width: 14.14em;
+  transform: rotate(45deg);
+  color: inherit;
+}
+.forkme-ribbon > a:hover, .forkme-ribbon > a:active, .forkme-ribbon > a:visited {
+  color: inherit;
+}
+.forkme-ribbon > a:hover {
+  background: var(--light);
+  color: var(--primary);
 }
 
 .hero-banner {
