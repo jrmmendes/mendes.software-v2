@@ -3,7 +3,7 @@
 
 // Fork-me Ribbon
 .forkme-ribbon {
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   box-sizing: border-box;
   top: 0;
@@ -36,6 +36,7 @@
 
 // Hero Banner Section
 .hero-banner {
+  position: relative;
   @include mixins.section-width;
   box-shadow: 20px 20px 75px rgba(0, 0, 0, 0.5);
   border: 1px solid white;
