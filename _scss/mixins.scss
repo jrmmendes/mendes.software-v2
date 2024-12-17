@@ -1,4 +1,3 @@
-
 @mixin centralized-flex {
   display: flex;
   justify-content: center;
@@ -13,9 +12,12 @@
   }
 }
 
-@mixin section-width {
+@mixin viewport-dimensions {
   width: 90dvw;
   max-width: 1200px;
+
+  height: 80dvh;
+  max-height: 80dvh;
 }
 
 @mixin reset-link {
@@ -28,7 +30,15 @@
 }
 
 @mixin scrollbar-style {
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: var(--gray2) var(--primary);
-  scrollbar-base-color: var(--gray2);
+}
+
+@mixin rounded-border {
+  border: 1px solid white;
+  border-radius: var(--roundness);
+}
+
+@mixin shadow-style {
+  box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
 }

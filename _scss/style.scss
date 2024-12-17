@@ -37,15 +37,10 @@
 // Hero Banner Section
 .hero-banner {
   position: relative;
-  @include mixins.section-width;
-  box-shadow: 20px 20px 75px rgba(0, 0, 0, 0.5);
-  border: 1px solid white;
-  border-radius: var(--roundness);
-
-  height: 80dvh;
-  max-height: 80dvh;
-
+  @include mixins.viewport-dimensions;
   @include mixins.centralized-flex;
+  @include mixins.rounded-border;
+
   flex-direction: column;
 
   .brand-image {
@@ -92,26 +87,24 @@
   }
 }
 
+
 // Resume Section
 .resume-section {
-  height: 80dvh;
-  max-height: 80dvh;
-  overflow-y: scroll;
-
   @include mixins.scrollbar-style;
-
-  box-shadow: 0 0 75px rgba(0, 0, 0, 0.5);
-  @include mixins.section-width;
-
+  @include mixins.viewport-dimensions;
+  @include mixins.rounded-border;
+  @include mixins.shadow-style;
+  
+  
   h1,
   h2,
   h3 {
     margin: 0.3em 0;
   }
 
+  overflow-y: scroll;  
   font-size: 12pt;
   box-sizing: border-box;
-
   padding: 2em 4em 2em;
 
   > .title {
@@ -128,6 +121,8 @@
     padding: 0 2em 0;
     width: 100dvw;
     height: 100dvh;
+    border: none;
+    
     max-height: 100dvh;
     font-size: 14pt;
   }
@@ -174,4 +169,13 @@
     margin: 0.5em 0;
     font-size: 1em;
   }
+}
+
+// Tools sections
+
+.tools-section {
+  @include mixins.scrollbar-style;
+  @include mixins.viewport-dimensions;
+  @include mixins.rounded-border;
+  @include mixins.shadow-style;
 }
