@@ -15,23 +15,45 @@ export const {
       primary: '#1c1f20',
       light: '#fff',
       gray2: '#bbb',
+      mailGray: '#a8a8a8',
+    },
+    radii: {
+      roundness: '0.45rem',
+    },
+    fontSizes: {
+      xs: '0.8em',
+      sm: '0.9em',
+      base: '15pt',
+      md: '1em',
+      lg: '1.1em',
+      xl: '1.5em',
+      xxl: '2em',
+      xxxl: '9em',
     },
     space: {
-      roundness: '0.45rem',
+      xxs: '0.2em',
+      xs: '0.3em',
+      sm: '0.5em',
+      md: '1em',
+      lg: '1.5em',
+      xl: '2em',
+      xxl: '4em',
     },
     fonts: {
       sans: '"Roboto", sans-serif',
-    },
-    fontSizes: {
-      base: '15pt',
     },
     shadows: {
       card: '0 0 75px rgba(0, 0, 0, 0.5)',
     },
     sizes: {
-      viewportWidth: '90dvw',
-      viewportMaxWidth: '1200px',
-      viewportHeight: '80dvh',
+      cardWidth: '90dvw',
+      cardMaxWidth: '1200px',
+      cardHeight: '80dvh',
+      fullVw: '100dvw',
+      fullVh: '100dvh',
+    },
+    zIndices: {
+      ribbon: 10,
     },
   },
   media: {
@@ -42,6 +64,19 @@ export const {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+    }),
+    resetLink: () => ({
+      color: 'inherit',
+      '&:hover, &:active, &:visited': {
+        color: 'inherit',
+      },
+    }),
+    fontSizeTransition: () => ({
+      transition: 'font-size 180ms ease-in-out',
+    }),
+    hiddenScrollbar: () => ({
+      scrollbarWidth: 'none',
+      scrollbarColor: '$gray2 $primary',
     }),
   },
 })

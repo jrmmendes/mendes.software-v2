@@ -1,9 +1,19 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { ResumeSection } from '../styles/ResumeSection'
-import { PageMain } from '../styles/PageMain'
+import { createFileRoute, Link as RouterLink } from '@tanstack/react-router'
+import { PageLayout, ScrollableCard, Flex, Heading, List, ListItem } from '../components'
+import { styled } from '../styles/stitches.config'
 
 export const Route = createFileRoute('/resume')({
   component: ResumePage,
+})
+
+const BackLink = styled(RouterLink, {
+  display: 'inline-flex',
+  alignItems: 'center',
+  marginBottom: '$md',
+  textDecoration: 'none',
+  color: '$light',
+  fontSize: '$md',
+  resetLink: true,
 })
 
 const resumeEntries = [
@@ -40,43 +50,38 @@ const voluntariadoEntry = {
 
 function ResumePage() {
   return (
-    <PageMain>
-      <ResumeSection className="resume-section">
-        <Link to="/" className="back-link">
+    <PageLayout>
+      <ScrollableCard>
+        <BackLink to="/">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: 4 }}>
             <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           Voltar
-        </Link>
-        <h1 className="title">Experiência</h1>
+        </BackLink>
+        <Heading level={1} marginTop="md">Experiência</Heading>
         {resumeEntries.map((entry, index) => (
-          <article key={index} className="resume-content">
-            <h1 className="title">{entry.title}</h1>
-            <hgroup className="content-info">
-              <h2 className="role">{entry.role}</h2>
-              <h3 className="stack">Stack: {entry.stack}</h3>
-            </hgroup>
-            <ul className="details-list">
-              {entry.details.map((detail, i) => (
-                <li key={i} className="detail" dangerouslySetInnerHTML={{ __html: detail }} />
-              ))}
-            </ul>
-          </article>
+          <ResumeEntry key={index} {...entry} />
         ))}
-        <h1 className="title">Voluntariado</h1>
-        <article className="resume-content">
-          <h1 className="title">{voluntariadoEntry.title}</h1>
-          <hgroup className="content-info">
-            <h2 className="role">{voluntariadoEntry.role}</h2>
-            <h3 className="stack">Stack: {voluntariadoEntry.stack}</h3>
-          </hgroup>
-          <ul className="details-list">
-            {voluntariadoEntry.details.map((detail, i) => (
-              <li key={i} className="detail" dangerouslySetInnerHTML={{ __html: detail }} />
-            ))}
-          </ul>
-        </article>
-      </ResumeSection>
-    </PageMain>
+        <Heading level={1} marginTop="md">Voluntariado</Heading>
+        <ResumeEntry {...voluntariadoEntry} />
+      </ScrollableCard>
+    </PageLayout>
+  )
+}
+
+function ResumeEntry({ title, role, stack, details }: { title: string; role: string; stack: string; details: string[] }) {
+  return (
+    <Flex direction="column" css={{ marginTop: '$md' }}>
+      <Heading level={2}>{title}</Heading>
+      <Flex direction="column" css={{ gap: '$xs' }}>
+        <Heading level={3}>{role}</Heading>
+        <Heading level={3}>Stack: {stack}</Heading>
+      </Flex>
+      <List details>
+        {details.map((detail, i) => (
+          <ListItem key={i} spacing="detail" dangerouslySetInnerHTML={{ __html: detail }} />
+        ))}
+      </List>
+    </Flex>
   )
 }

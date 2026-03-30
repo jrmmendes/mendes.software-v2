@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { ToolsSection } from '../styles/ToolsSection'
-import { PageMain } from '../styles/PageMain'
+import { PageLayout, ScrollableCard } from '../components'
 
 export const Route = createFileRoute('/tools')({
   component: ToolsPage,
@@ -8,10 +7,10 @@ export const Route = createFileRoute('/tools')({
 
 function ToolsPage() {
   return (
-    <PageMain>
-      <ToolsSection className="tools-section">
+    <PageLayout>
+      <ScrollableCard>
         <h1>Test</h1>
-      </ToolsSection>
-    </PageMain>
+      </ScrollableCard>
+    </PageLayout>
   )
 }
