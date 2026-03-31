@@ -83,17 +83,6 @@ exports[`HomePage > renders 1`] = `
             Discogs
           </a>
         </li>
-        <li
-          class="c-PJLV c-PJLV-hXauLp-spacing-link"
-        >
-          <a
-            class="c-cowZHJ c-cowZHJ-jnHoRQ-variant-hoverable"
-            href="/resume"
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
-        </li>
       </ul>
     </section>
   </main>
