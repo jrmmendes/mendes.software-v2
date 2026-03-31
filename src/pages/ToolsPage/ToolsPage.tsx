@@ -1,4 +1,5 @@
-import { PageLayout, ScrollableCard } from '@/components'
+import { PageLayout } from '@/components'
+import { ScrollableCard } from '@/widgets'
 
 export function ToolsPage() {
   return (

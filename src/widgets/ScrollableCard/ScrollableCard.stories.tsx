@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ScrollableCard } from './ScrollableCard'
-import { Typography } from './Typography'
+import { Typography } from '../../components/Typography/Typography'
 
 const meta = {
   title: 'Components/ScrollableCard',

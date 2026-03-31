@@ -1,4 +1,5 @@
-import { PageLayout, Flex, Card, Icon, List, ListItem, Link, RibbonWrapper, RibbonLink, Typography } from '@/components'
+import { PageLayout, Flex, Card, Icon, Link, RibbonWrapper, RibbonLink, Typography } from '@/components'
+import { List, ListItem } from '@/widgets'
 
 const links = [
   { label: 'Github', href: 'https://github.com/jrmmendes' },
@@ -27,7 +28,7 @@ export function HomePage() {
         </Flex>
         <List inline>
           {links.map((item) => (
-            <ListItem key={item.href} spacing="link">
+            <ListItem key={item.href ?? item.to ?? item.label} spacing="link">
               {item.href ? (
                 <Link href={item.href} target="_blank" rel="noopener noreferrer" variant="hoverable">
                   {item.label}

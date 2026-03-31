@@ -1,4 +1,5 @@
-import { Flex, List, ListItem, Typography } from '@/components'
+import { Flex, Typography } from '@/components'
+import { List, ListItem } from '@/widgets'
 
 interface ResumeEntryProps {
   title: string

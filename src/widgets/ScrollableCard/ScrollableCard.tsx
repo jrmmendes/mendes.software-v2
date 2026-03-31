@@ -1,5 +1,5 @@
 import { styled } from '@/styles/stitches.config'
-import { Card } from '../Card/Card'
+import { Card } from '../../components/Card/Card'
 
 export const ScrollableCard = styled(Card, {
   hiddenScrollbar: true,

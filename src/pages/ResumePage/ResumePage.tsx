@@ -1,4 +1,5 @@
-import { PageLayout, ScrollableCard, BackLink, BackArrow, Typography, Box } from '@/components'
+import { PageLayout, BackLink, BackArrow, Typography, Box } from '@/components'
+import { ScrollableCard } from '@/widgets'
 import { ResumeEntry } from '@/widgets/ResumeEntry/ResumeEntry'
 
 const resumeEntries = [
