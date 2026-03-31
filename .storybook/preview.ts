@@ -1,17 +1,8 @@
-import type { Preview } from '@storybook/react'
+import type { Decorator, Preview } from '@storybook/react'
+import React, { useEffect, useState } from 'react'
 
-import type { Decorator } from '@storybook/react'
-import React from 'react'
-import { useEffect, useState } from 'react'
-
-import { getCssText } from '../src/styles/stitches.config'
 import { globalStyles } from '../src/styles/globalStyles'
-
-import '../src/components'
-import '../src/widgets/ResumeEntry'
-import '../src/pages/HomePage'
-import '../src/pages/ResumePage'
-import '../src/pages/ToolsPage'
+import { getCssText } from '../src/styles/stitches.config'
 
 globalStyles()
 
@@ -29,7 +20,7 @@ function StyleInjector() {
   })
 }
 
-const withTheme: Decorator = (Story) => (
+const withTheme: Decorator = (Story) =>
   React.createElement(
     React.Fragment,
     null,
@@ -47,7 +38,6 @@ const withTheme: Decorator = (Story) => (
       React.createElement(Story),
     ),
   )
-)
 
 const preview: Preview = {
   parameters: {

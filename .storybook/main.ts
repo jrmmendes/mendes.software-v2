@@ -24,18 +24,15 @@ const config: StorybookConfig = {
     const srcDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../src')
 
     const existingAliases = config.resolve.alias
-    const normalizedAliases = Array.isArray(existingAliases)
+    const aliasesArray = Array.isArray(existingAliases)
       ? existingAliases
       : existingAliases
         ? Object.entries(existingAliases).map(([find, replacement]) => ({ find, replacement }))
         : []
 
     config.resolve.alias = [
-      ...normalizedAliases,
-      {
-        find: /^@\//,
-        replacement: `${srcDir}/`,
-      },
+      ...aliasesArray,
+      { find: /^@\//, replacement: `${srcDir}/` },
     ]
 
     return config
