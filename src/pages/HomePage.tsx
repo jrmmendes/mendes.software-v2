@@ -1,4 +1,4 @@
-import { PageLayout, Flex, Card, Icon, Heading, List, ListItem, Link, RibbonWrapper, RibbonLink } from '../components'
+import { PageLayout, Flex, Card, Icon, List, ListItem, Link, RibbonWrapper, RibbonLink, Typography } from '../components'
 
 const links = [
   { label: 'Github', href: 'https://github.com/jrmmendes' },
@@ -22,7 +22,7 @@ export function HomePage() {
         </RibbonWrapper>
         <Flex direction="column" align="center" justify="center" gap="md" css={{ marginBottom: '$xl' }}>
           <Icon className="icon icon-jm-logo" size="logo" />
-          <Heading level={1}>Junior Mendes</Heading>
+          <Typography variant="h1">Junior Mendes</Typography>
         </Flex>
         <List inline>
           {links.map((item) => (

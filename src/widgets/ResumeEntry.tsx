@@ -1,4 +1,4 @@
-import { Flex, Heading, List, ListItem } from '../components'
+import { Flex, List, ListItem, Typography } from '../components'
 
 interface ResumeEntryProps {
   title: string
@@ -10,10 +10,10 @@ interface ResumeEntryProps {
 export function ResumeEntry({ title, role, stack, details }: ResumeEntryProps) {
   return (
     <Flex direction="column" css={{ marginTop: '$md' }}>
-      <Heading level={2}>{title}</Heading>
+      <Typography variant="h2">{title}</Typography>
       <Flex direction="column" css={{ gap: '$xs' }}>
-        <Heading level={3}>{role}</Heading>
-        <Heading level={3}>Stack: {stack}</Heading>
+        <Typography variant="h3">{role}</Typography>
+        <Typography variant="h3">Stack: {stack}</Typography>
       </Flex>
       <List details>
         {details.map((detail, i) => (
