@@ -1,4 +1,4 @@
-import { PageLayout, ScrollableCard, BackLink, BackArrow, Typography } from '../components'
+import { PageLayout, ScrollableCard, BackLink, BackArrow, Typography, Box } from '../components'
 import { ResumeEntry } from '../widgets/ResumeEntry'
 
 const resumeEntries = [
@@ -37,16 +37,19 @@ export function ResumePage() {
   return (
     <PageLayout>
       <ScrollableCard>
-        <BackLink to="/">
+        <BackLink href="/">
           <BackArrow />
           Voltar
         </BackLink>
-        <Typography variant="h1" marginTop="md">Experiência</Typography>
-        {resumeEntries.map((entry, index) => (
-          <ResumeEntry key={index} {...entry} />
-        ))}
-        <Typography variant="h1" marginTop="md">Voluntariado</Typography>
-        <ResumeEntry {...voluntariadoEntry} />
+
+        <Box>
+          <Typography variant="h1" marginTop="md">Experiência</Typography>
+          {resumeEntries.map((entry, index) => (
+            <ResumeEntry key={index} {...entry} />
+          ))}
+          <Typography variant="h1" marginTop="md">Voluntariado</Typography>
+          <ResumeEntry {...voluntariadoEntry} />
+        </Box>
       </ScrollableCard>
     </PageLayout>
   )

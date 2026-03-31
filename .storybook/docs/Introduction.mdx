@@ -1,0 +1,86 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Introduction" />
+
+# mendes.software-v2
+
+Personal portfolio site built with React, Vite, TypeScript, Stitches and TanStack Router.
+
+## Architecture
+
+This project follows a loose version of **Atomic Design**, organized into four layers:
+
+```
+src/
+├── components/   # Reusable UI building blocks
+├── widgets/      # Feature-specific compositions
+├── pages/        # Full page compositions
+└── routes/       # Router wiring (thin layer)
+```
+
+### Components
+
+The foundation layer. These are reusable, self-contained UI elements that map closely to raw HTML elements but with design-system tokens applied via Stitches.
+
+- **Layout primitives**: `Box`, `Flex`, `Card`, `PageLayout`, `ScrollableCard`
+- **Typography**: `Typography` — unified text component with `variant` (`h1`–`h3`, `body`), `color`, `weight`, `size`
+- **Interactive**: `Link` — styled anchor with `variant` (`default`, `hoverable`, `detail`)
+- **Lists**: `List`, `ListItem` — with `inline` and `details` variants
+- **Decorative**: `Icon` — Fontello icon wrapper with size variants
+- **Specialized**: `RibbonWrapper`/`RibbonLink`, `BackArrow`/`BackLink`
+
+Components are pure visual elements. They receive props and render — no business logic, no data fetching.
+
+### Widgets
+
+Widgets compose multiple components into domain-specific building blocks. They handle layout coordination and data presentation but remain agnostic to page context.
+
+- `ResumeEntry` — composes `Flex`, `Typography`, `List` to render a single resume item
+
+Widgets are the "molecules/organisms" of the system: they know *what* they display but not *where* they appear.
+
+### Pages
+
+Pages are full-screen compositions that wire widgets and components together. They own data (static or fetched) and define the complete layout of a route.
+
+- `HomePage` — link-tree landing page
+- `ResumePage` — professional experience page
+- `ToolsPage` — placeholder page
+
+Pages are the "templates" of the system: they assemble widgets and components into a complete user experience.
+
+### Routes
+
+The thinnest possible layer. Route files only connect TanStack Router to page components — no JSX, no logic.
+
+```tsx
+// src/routes/index.tsx
+import { createFileRoute } from '@tanstack/react-router'
+import { HomePage } from '../pages/HomePage'
+
+export const Route = createFileRoute('/')({
+  component: HomePage,
+})
+```
+
+## Design Tokens
+
+All styling flows through Stitches tokens defined in `src/styles/stitches.config.ts`:
+
+| Category | Tokens |
+|---|---|
+| Colors | `primary`, `light`, `gray2`, `mailGray` |
+| Font sizes | `xs`, `sm`, `base`, `md`, `lg`, `xl`, `xxl`, `xxxl` |
+| Spacing | `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl` |
+| Radii | `roundness` |
+| Shadows | `card` |
+| Sizes | `cardWidth`, `cardMaxWidth`, `cardHeight`, `fullVw`, `fullVh` |
+| Media | `mobile` (max-width: 800px) |
+
+## Tech Stack
+
+- **React 18** + **TypeScript**
+- **Vite 5** — build tool and dev server
+- **Stitches** — CSS-in-JS with design tokens
+- **TanStack Router** — file-based routing
+- **Storybook** — component documentation
