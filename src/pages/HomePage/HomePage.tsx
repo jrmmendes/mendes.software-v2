@@ -1,7 +1,13 @@
 import { PageLayout, Flex, Card, Icon, Link, RibbonWrapper, RibbonLink, Typography } from '@/components'
 import { List, ListItem } from '@/widgets'
 
-const links = [
+type Link = {
+  label: string
+  to?: string
+  href?: string
+}
+
+const links: Link[] = [
   { label: 'Github', href: 'https://github.com/jrmmendes' },
   { label: 'Linkedin', href: 'https://www.linkedin.com/in/jrmmendes/' },
   { label: 'DEV', href: 'https://dev.to/dotmendes' },
