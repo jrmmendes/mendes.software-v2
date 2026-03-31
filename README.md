@@ -1,27 +1,19 @@
 # Mendes.software
-This is a simple portfolio page. Simple HTML, CSS (SCSS) and JS
+
+Portfolio built with React, TypeScript, and Vite.
 
 ## Setup
-The only requirement is to have `sass` installed globally:
 
 ```shell
-npm i -g sass
+npm ci
 ```
 
-Then, compile the SCSS files inside `_scss` into `_css` folder. This project aims to use [ITCSS](https://willianjusten.com.br/organizando-seu-css-com-itcss), but it's not strict about it. 
+## Commands
 
-## TL;DR
-Start the webserver:
 ```shell
-vite . --host
+npm run dev          # Start dev server
+npm run build        # Production build
+npm run preview      # Preview production build
+npm run storybook    # Start Storybook
+npm run test         # Run tests
 ```
-
-Start the sass compiler:
-```shell
-sass -w _scss/style.scss:_css/style.css
-```
-
-## Stack
-- Plain HTML, CSS and JS
-- sass (SCSS syntax)
-- Fontello
