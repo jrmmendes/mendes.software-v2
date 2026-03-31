@@ -8,10 +8,10 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as ToolsRouteImport } from './routes/tools'
-import { Route as ResumeRouteImport } from './routes/resume'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as rootRouteImport } from './infra/routes/__root'
+import { Route as ToolsRouteImport } from './infra/routes/tools'
+import { Route as ResumeRouteImport } from './infra/routes/resume'
+import { Route as IndexRouteImport } from './infra/routes/index'
 
 const ToolsRoute = ToolsRouteImport.update({
   id: '/tools',
