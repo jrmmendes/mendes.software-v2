@@ -1,4 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const config: StorybookConfig = {
   stories: [
@@ -17,6 +19,27 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['../public'],
+  viteFinal: async (config) => {
+    config.resolve = config.resolve ?? {}
+    const srcDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../src')
+
+    const existingAliases = config.resolve.alias
+    const normalizedAliases = Array.isArray(existingAliases)
+      ? existingAliases
+      : existingAliases
+        ? Object.entries(existingAliases).map(([find, replacement]) => ({ find, replacement }))
+        : []
+
+    config.resolve.alias = [
+      ...normalizedAliases,
+      {
+        find: /^@\//,
+        replacement: `${srcDir}/`,
+      },
+    ]
+
+    return config
+  },
 }
 
 export default config

@@ -1,9 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+import { tanstackRouter } from '@tanstack/router-plugin/vite'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 export default defineConfig({
-  plugins: [TanStackRouterVite(), react()],
+  plugins: [tanstackRouter({ target: 'react' }), react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
+    },
+  },
   build: {
     rollupOptions: {
       output: {

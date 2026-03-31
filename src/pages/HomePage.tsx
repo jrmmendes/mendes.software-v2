@@ -5,6 +5,7 @@ const links = [
   { label: 'Linkedin', href: 'https://www.linkedin.com/in/jrmmendes/' },
   { label: 'DEV', href: 'https://dev.to/dotmendes' },
   { label: 'Discogs', href: 'https://www.discogs.com/pt_BR/user/jrmmendes/collection' },
+  { label: 'Resume', to: '/resume' },
 ]
 
 export function HomePage() {
@@ -27,9 +28,15 @@ export function HomePage() {
         <List inline>
           {links.map((item) => (
             <ListItem key={item.href} spacing="link">
-              <Link href={item.href} target="_blank" rel="noopener noreferrer" variant="hoverable">
-                {item.label}
-              </Link>
+              {item.href ? (
+                <Link href={item.href} target="_blank" rel="noopener noreferrer" variant="hoverable">
+                  {item.label}
+                </Link>
+              ) : (
+                <Link to={item.to} rel="noopener noreferrer" variant="hoverable">
+                  {item.label}
+                </Link>
+              )}
             </ListItem>
           ))}
         </List>
