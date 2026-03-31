@@ -1,4 +1,5 @@
 .idea
+.tanstack
 .vite
 node_modules
 dist

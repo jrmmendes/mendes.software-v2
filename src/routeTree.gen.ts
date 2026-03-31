@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './infra/routes/__root'
 import { Route as ToolsRouteImport } from './infra/routes/tools'
 import { Route as ResumeRouteImport } from './infra/routes/resume'
+import { Route as BlogRouteImport } from './infra/routes/blog'
 import { Route as IndexRouteImport } from './infra/routes/index'
 
 const ToolsRoute = ToolsRouteImport.update({
@@ -23,6 +24,11 @@ const ResumeRoute = ResumeRouteImport.update({
   path: '/resume',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/resume': typeof ResumeRoute
   '/tools': typeof ToolsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/resume': typeof ResumeRoute
   '/tools': typeof ToolsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
   '/resume': typeof ResumeRoute
   '/tools': typeof ToolsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/resume' | '/tools'
+  fullPaths: '/' | '/blog' | '/resume' | '/tools'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/resume' | '/tools'
-  id: '__root__' | '/' | '/resume' | '/tools'
+  to: '/' | '/blog' | '/resume' | '/tools'
+  id: '__root__' | '/' | '/blog' | '/resume' | '/tools'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogRoute: typeof BlogRoute
   ResumeRoute: typeof ResumeRoute
   ToolsRoute: typeof ToolsRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResumeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogRoute: BlogRoute,
   ResumeRoute: ResumeRoute,
   ToolsRoute: ToolsRoute,
 }

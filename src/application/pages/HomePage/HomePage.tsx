@@ -21,6 +21,7 @@ const links: Link[] = [
   { label: 'Linkedin', href: 'https://www.linkedin.com/in/jrmmendes/' },
   { label: 'DEV', href: 'https://dev.to/dotmendes' },
   { label: 'Discogs', href: 'https://www.discogs.com/pt_BR/user/jrmmendes/collection' },
+  { label: 'Blog', to: '/blog' },
   //{ label: 'Resume', to: '/resume' },
 ]
 
