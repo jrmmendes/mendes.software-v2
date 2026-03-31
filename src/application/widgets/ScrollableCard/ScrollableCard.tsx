@@ -8,7 +8,7 @@ export const ScrollableCard = styled(Card, {
   fontSize: '12pt',
 
   '@mobile': {
-    padding: '0 $xl 0',
+    padding: '$xl $xl 0',
     fontSize: '14pt',
   },
 })
