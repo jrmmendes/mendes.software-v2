@@ -1,0 +1,101 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HomePage > renders 1`] = `
+<div>
+  <main
+    class="c-jtSyHG"
+  >
+    <section
+      class="c-hkZtCm c-hkZtCm-ibJzLjx-css"
+    >
+      <div
+        class="c-iQAPRY"
+      >
+        <a
+          class="c-fSrTdp"
+          href="https://github.com/jrmmendes/mendes.software-v2"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Fork-me on github
+        </a>
+      </div>
+      <div
+        class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-jroWjL-align-center c-dhzjXW-bICGYT-justify-center c-dhzjXW-liYBXE-gap-md c-dhzjXW-ierwvxC-css"
+      >
+        <i
+          class="c-PJLV c-PJLV-elXFqp-size-logo icon icon-jm-logo"
+        />
+        <span
+          class="c-cVJToh c-cVJToh-bkiJNB-variant-h1 c-cVJToh-jpdjls-color-light"
+        >
+          Junior Mendes
+        </span>
+      </div>
+      <ul
+        class="c-dCVQcb c-dCVQcb-disrP-inline-true"
+      >
+        <li
+          class="c-PJLV c-PJLV-hXauLp-spacing-link"
+        >
+          <a
+            class="c-cowZHJ c-cowZHJ-jnHoRQ-variant-hoverable"
+            href="https://github.com/jrmmendes"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Github
+          </a>
+        </li>
+        <li
+          class="c-PJLV c-PJLV-hXauLp-spacing-link"
+        >
+          <a
+            class="c-cowZHJ c-cowZHJ-jnHoRQ-variant-hoverable"
+            href="https://www.linkedin.com/in/jrmmendes/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Linkedin
+          </a>
+        </li>
+        <li
+          class="c-PJLV c-PJLV-hXauLp-spacing-link"
+        >
+          <a
+            class="c-cowZHJ c-cowZHJ-jnHoRQ-variant-hoverable"
+            href="https://dev.to/dotmendes"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            DEV
+          </a>
+        </li>
+        <li
+          class="c-PJLV c-PJLV-hXauLp-spacing-link"
+        >
+          <a
+            class="c-cowZHJ c-cowZHJ-jnHoRQ-variant-hoverable"
+            href="https://www.discogs.com/pt_BR/user/jrmmendes/collection"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Discogs
+          </a>
+        </li>
+        <li
+          class="c-PJLV c-PJLV-hXauLp-spacing-link"
+        >
+          <a
+            class="c-cowZHJ c-cowZHJ-jnHoRQ-variant-hoverable"
+            href="/resume"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
+`;

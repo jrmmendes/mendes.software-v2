@@ -1,0 +1,195 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ResumePage > renders 1`] = `
+<div>
+  <main
+    class="c-jtSyHG"
+  >
+    <section
+      class="c-hkZtCm c-fHGxMD"
+    >
+      <a
+        aria-current="page"
+        class="c-dmgvRA active"
+        data-status="active"
+        href="/"
+      >
+        <svg
+          fill="none"
+          height="16"
+          style="margin-right: 4px;"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 12L6 8L10 4"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+        Voltar
+      </a>
+      <div
+        class="c-lesPJm"
+      >
+        <span
+          class="c-cVJToh c-cVJToh-bkiJNB-variant-h1 c-cVJToh-jpdjls-color-light c-cVJToh-jhpNDn-marginTop-md"
+        >
+          Experiência
+        </span>
+        <div
+          class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijhpNDn-css"
+        >
+          <span
+            class="c-cVJToh c-cVJToh-gXzbQw-variant-h2 c-cVJToh-jpdjls-color-light"
+          >
+            Força de Vendas – Natura (via Concrete Solutions/Accenture/Avanade)
+          </span>
+          <div
+            class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijEnlPC-css"
+          >
+            <span
+              class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+            >
+              2021 – Atualmente / Engenheiro de Software (Senior/Consultor)
+            </span>
+            <span
+              class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+            >
+              Stack: 
+              React, SingleSPA, PHP, Typescript, Python, NestJS, ScyllaDB, Postgres, MySQL, AthenaDB AWS
+            </span>
+          </div>
+          <ul
+            class="c-dCVQcb c-dCVQcb-hZgcdG-details-true"
+          >
+            <li
+              class="c-PJLV c-PJLV-jARetK-spacing-detail"
+            >
+              Colaboração no desenvolvimento dos aplicativos para a Força de Vendas Natura (líderes e gerentes que apoiam as consultoras), com suporte e evolução de aplicações legadas (PHP, Drupal, Node, React, React Native), desenho de soluções utilizando microsserviços, microfrontends, APIs REST e GraphQL, além de processamento de dados com Python e Typescript/NestJS;
+            </li>
+            <li
+              class="c-PJLV c-PJLV-jARetK-spacing-detail"
+            >
+              Tive a possibilidade de trazer mudanças a nível de organização dos times, com foco nos valores centrais do 
+              <a
+                class="link"
+                href="https://agilemanifesto.org"
+                target="_blank"
+              >
+                 Manifesto Ágil
+              </a>
+               e práticas de engenharia modernas, atuando em todas as frentes do desenvolvimento das aplicações (QA, DevOps, Dados, Arquitetura, Back-end e Front-end). Também foi possível participar ativamente do go-live de diversas aplicações nos países de atuação da Natura;
+            </li>
+            <li
+              class="c-PJLV c-PJLV-jARetK-spacing-detail"
+            >
+              Trouxe a cultura de boa documentação para os softwares em funcionamento, bem como práticas de opensource para melhoria da comunicação assíncrona dos times. Tambem contribui para formação e unificação de diversas equipes.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijhpNDn-css"
+        >
+          <span
+            class="c-cVJToh c-cVJToh-gXzbQw-variant-h2 c-cVJToh-jpdjls-color-light"
+          >
+            Plataforma Iônica – FTD (via Concrete Solutions/Accenture)
+          </span>
+          <div
+            class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijEnlPC-css"
+          >
+            <span
+              class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+            >
+              2020 – 2021 – Desenvolvedor Backend (Pleno)
+            </span>
+            <span
+              class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+            >
+              Stack: 
+              React, Typescript, Azure, Redis
+            </span>
+          </div>
+          <ul
+            class="c-dCVQcb c-dCVQcb-hZgcdG-details-true"
+          >
+            <li
+              class="c-PJLV c-PJLV-jARetK-spacing-detail"
+            >
+              Colaboração no desenvolvimento da 
+              <a
+                class="link"
+                href="https://ola.souionica.com.br"
+                target="_blank"
+              >
+                Plataforma Iônica
+              </a>
+              , onde pude atuar como desenvolvedor backend utilizando GraphQL, Node e Typescript, além de implementar soluções a partir dos serviços da Azure.
+            </li>
+            <li
+              class="c-PJLV c-PJLV-jARetK-spacing-detail"
+            >
+              Atuei na implementação de uma autorização sincronizada entre diferentes plataformas educacionais parceiras, utilizando Redis e NodeJS. Isso permitiu que uma funcionalidade de "Logout Global" pudesse ser disponibilizada.
+            </li>
+            <li
+              class="c-PJLV c-PJLV-jARetK-spacing-detail"
+            >
+              Implementação de lambda functions (via Azure Functions) para apoio a custom policies do ActiveDirectory. Em conjunto com o time de devops, automatizei o CI/CD (Azure Pipelines) o que trouxe melhoria no fluxo de desenvolvimento em aplicações serverless.
+            </li>
+          </ul>
+        </div>
+        <span
+          class="c-cVJToh c-cVJToh-bkiJNB-variant-h1 c-cVJToh-jpdjls-color-light c-cVJToh-jhpNDn-marginTop-md"
+        >
+          Voluntariado
+        </span>
+        <div
+          class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijhpNDn-css"
+        >
+          <span
+            class="c-cVJToh c-cVJToh-gXzbQw-variant-h2 c-cVJToh-jpdjls-color-light"
+          >
+            Movimento Empresa Júnior - CITi
+          </span>
+          <div
+            class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijEnlPC-css"
+          >
+            <span
+              class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+            >
+              2019 – 2020 – Desenvolvedor
+            </span>
+            <span
+              class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+            >
+              Stack: 
+              Python/Django, Node, React, Typescript, Heroku, Digital Ocean
+            </span>
+          </div>
+          <ul
+            class="c-dCVQcb c-dCVQcb-hZgcdG-details-true"
+          >
+            <li
+              class="c-PJLV c-PJLV-jARetK-spacing-detail"
+            >
+              Como desenvolvedor de software no 
+              <a
+                class="link"
+                href="https://citi.org.br/"
+                target="_blank"
+              >
+                CITi
+              </a>
+               , a Empresa Júnior do Centro de Informática da UFPE, pude estar em contato direto com clientes e por em prática diversas idéias, vendo o efeito pratico de decisões técnicas desde o início da minha carreira. Para além dos projetos, pude participar da organização de eventos da área, processos seletivos, planejamentos estratégicos, eventos do Movimento Empresa Júnior e mentorar pessoas que estavam iniciando na área.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+`;

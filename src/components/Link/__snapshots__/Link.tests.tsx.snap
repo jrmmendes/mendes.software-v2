@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Link > renders external link when href is provided 1`] = `
+<div>
+  <a
+    class="c-cowZHJ"
+    href="https://example.com"
+  >
+    ext
+  </a>
+</div>
+`;
+
+exports[`Link > renders router link when to is provided 1`] = `
+<div>
+  <a
+    aria-current="page"
+    class="c-cowZHJ active"
+    data-status="active"
+    href="/"
+  >
+    int
+  </a>
+</div>
+`;

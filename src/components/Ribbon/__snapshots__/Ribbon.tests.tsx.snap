@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Ribbon > renders wrapper and link 1`] = `
+<div>
+  <div
+    class="c-iQAPRY"
+  >
+    <a
+      class="c-fSrTdp"
+      href="#"
+    >
+      link
+    </a>
+  </div>
+</div>
+`;

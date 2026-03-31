@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ScrollableCard > renders 1`] = `
+<div>
+  <section
+    class="c-hkZtCm c-fHGxMD"
+  >
+    content
+  </section>
+</div>
+`;

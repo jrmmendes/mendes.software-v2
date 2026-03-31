@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Icon > renders with className 1`] = `
+<div>
+  <i
+    class="c-PJLV c-PJLV-kWyXas-size-md icon-test"
+  />
+</div>
+`;

@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ResumeEntry > renders 1`] = `
+<div>
+  <div
+    class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijhpNDn-css"
+  >
+    <span
+      class="c-cVJToh c-cVJToh-gXzbQw-variant-h2 c-cVJToh-jpdjls-color-light"
+    >
+      Title
+    </span>
+    <div
+      class="c-dhzjXW c-dhzjXW-iTKOFX-direction-column c-dhzjXW-ijEnlPC-css"
+    >
+      <span
+        class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+      >
+        Role
+      </span>
+      <span
+        class="c-cVJToh c-cVJToh-kRMFFi-variant-h3 c-cVJToh-jpdjls-color-light"
+      >
+        Stack: 
+        Stack
+      </span>
+    </div>
+    <ul
+      class="c-dCVQcb c-dCVQcb-hZgcdG-details-true"
+    >
+      <li
+        class="c-PJLV c-PJLV-jARetK-spacing-detail"
+      >
+        a
+      </li>
+      <li
+        class="c-PJLV c-PJLV-jARetK-spacing-detail"
+      >
+        b
+      </li>
+    </ul>
+  </div>
+</div>
+`;

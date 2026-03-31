@@ -1,8 +1,9 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import { tanstackRouter } from '@tanstack/router-plugin/vite'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import type { PreRenderedAsset } from 'rollup'
 
 export default defineConfig({
   plugins: [tanstackRouter({ target: 'react' }), react()],
@@ -11,10 +12,16 @@ export default defineConfig({
       '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
     },
   },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./src/test/setup.ts'],
+    include: ['**/*.tests.tsx'],
+  },
   build: {
     rollupOptions: {
       output: {
-        assetFileNames: (assetInfo) => {
+        assetFileNames: (assetInfo: PreRenderedAsset) => {
           if (/\.(png|jpe?g|gif|svg|webp|ico)$/i.test(assetInfo.name || '')) {
             return 'assets/[name][extname]'
           }
