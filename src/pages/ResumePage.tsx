@@ -37,7 +37,7 @@ export function ResumePage() {
   return (
     <PageLayout>
       <ScrollableCard>
-        <BackLink href="/">
+        <BackLink to="/">
           <BackArrow />
           Voltar
         </BackLink>

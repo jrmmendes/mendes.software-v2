@@ -1,3 +1,4 @@
+import { Link as RouterLink } from '@tanstack/react-router'
 import { styled } from '../styles/stitches.config'
 
 export const BackArrow = () => (
@@ -6,7 +7,7 @@ export const BackArrow = () => (
   </svg>
 )
 
-export const BackLink = styled('a', {
+export const BackLink = styled(RouterLink, {
   display: 'inline-flex',
   alignItems: 'center',
   marginBottom: '$md',
