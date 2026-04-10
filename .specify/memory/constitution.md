@@ -1,15 +1,10 @@
 <!--
 Sync Impact Report:
-- Version change: 0.0.0 (template) → 1.0.0 (initial)
-- Modified principles: None (all new - template → concrete)
-- Added sections: Core Principles (5), Additional Constraints, Development Workflow, Governance
+- Version change: 1.0.0 → 1.1.0
+- Modified principles: I (Feature Sliced Architecture → Feature Sliced Design), II (Layered Separation updated)
+- Added sections: FSD layer definitions, import rule, segments concept
 - Removed sections: None
-- Templates requiring updates:
-  ✅ .specify/templates/plan-template.md - Constitution Check section references generic gates (no changes needed)
-  ✅ .specify/templates/spec-template.md - No constitution-specific constraints to propagate
-  ✅ .specify/templates/tasks-template.md - Task structure already supports TDD workflow
-  ✅ .specify/templates/commands/*.md - No agent-specific references found
-  ✅ README.md - No principle references to update
+- Templates requiring updates: None
 - Follow-up TODOs: None
 -->
 
@@ -17,32 +12,35 @@ Sync Impact Report:
 
 ## Core Principles
 
-### I. Component-First Architecture
+### I. Feature Sliced Design
 
-Every UI element MUST be a self-contained, independently testable, and documented
-component. Components live in `src/application/components/` and must:
+The codebase MUST follow Feature Sliced Design (FSD) methodology with three
+organizational levels:
 
-- Accept all configuration via props; no hidden global state dependencies.
-- Export a default component plus any sub-components in the same file.
-- Include Storybook stories (.stories.tsx) demonstrating all variants.
-- Have a single, clear purpose — no multi-responsibility components.
+**Layers** (top-level directories, dependency flows downward):
+- `app/` — Entry points, routing, providers, global styles.
+- `pages/` — Full pages or major page sections.
+- `widgets/` — Self-contained UI blocks delivering complete use cases.
+- `features/` — Reusable product features (user actions with business value).
+- `entities/` — Business entities (user, product, etc.).
+- `shared/` — Reusable code detached from business specifics (UI kit, API client, lib).
 
-**Rationale**: Component-driven development enables parallel work, isolated testing,
-and consistent design system growth.
+**Slices** (directories inside layers, partitioned by business domain):
+- Slices cannot import other slices on the same layer.
+- Naming reflects business domain, not technical purpose.
 
-### II. Layered Separation
+**Segments** (technical subdivision inside slices):
+- `ui/` — Components and visual elements.
+- `model/` — Business logic, state, data transformations.
+- `api/` — API calls and requests.
+- `lib/` — Internal libraries and utilities.
 
-The codebase MUST maintain strict separation between application and infrastructure
-layers:
+**Import Rule**: A module in any layer may only import from layers strictly
+below it. `app/` and `shared/` are exceptions (both are layers and segments).
 
-- `src/application/` — UI components, pages, and composite widgets only.
-- `src/infra/` — Routing, styling (Stitches config), test setup, and environment config.
-- Application code MUST NOT import from sibling application directories; use the
-  `@/*` path alias for cross-layer imports from infra.
-- Infrastructure code MUST NOT contain business logic or UI rendering.
-
-**Rationale**: Clean boundaries prevent coupling, make testing straightforward,
-and allow each layer to evolve independently.
+**Rationale**: FSD provides explicit architecture that scales with business
+complexity, enables safe refactoring, and makes the codebase navigable by
+domain.
 
 ### III. Test-Driven Development (NON-NEGOTIABLE)
 
@@ -89,18 +87,21 @@ serves as executable documentation.
 
 - **Framework**: React 18 with functional components and hooks.
 - **Styling**: @stitches/react for CSS-in-JS — no raw CSS files or CSS modules.
-- **Routing**: @tanstack/react-router with file-based routing in `src/infra/routes/`.
+- **Routing**: @tanstack/react-router with file-based routing in `src/app/`.
 - **Build**: Vite 5 with the TanStack Router plugin.
 - **Deployment**: Netlify with SPA redirect configuration (`netlify.toml`).
+- **Architecture**: Feature Sliced Design (processes layer deprecated).
 
 ### Code Organization
 
-- Components: `src/application/components/`
-- Pages: `src/application/pages/`
-- Widgets (composite components): `src/application/widgets/`
-- Routes: `src/infra/routes/`
-- Styles: `src/infra/styles/`
-- Test utilities: `src/infra/test/`
+Following FSD structure:
+- App: `src/app/` (routing, providers, entry points)
+- Pages: `src/pages/`
+- Widgets: `src/widgets/`
+- Features: `src/features/`
+- Entities: `src/entities/`
+- Shared: `src/shared/` (UI kit, API, utilities)
+- Infrastructure: `src/app/` or `src/shared/lib/` (routing, styling config, test setup)
 
 ### Node Version
 
@@ -145,4 +146,4 @@ All PRs and reviews MUST verify compliance with these principles.
 Complexity must be justified against YAGNI and simplicity principles.
 For runtime development guidance, consult this constitution and the project README.
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-30 | **Last Amended**: 2026-03-31
+**Version**: 1.1.0 | **Ratified**: 2026-03-30 | **Last Amended**: 2026-04-10
