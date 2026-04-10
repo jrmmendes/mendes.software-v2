@@ -1,23 +1,28 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { screen, waitFor } from '@testing-library/react'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { screen, waitFor, cleanup } from '@testing-library/react'
 import { BlogPage } from './BlogPage'
-import { renderWithRouter } from '@/shared/test/testUtils'
-import { client } from '@/entities/Post/api'
+import { renderWithRouter, testQueryClient } from '@/shared/test/testUtils'
+import { fetchPosts } from '@/entities/Post/api'
 import type { BlogPost } from '@/entities/Post/model'
 
 vi.mock('@/entities/Post/api', () => ({
-  client: {
-    getPosts: vi.fn(),
-  },
+  fetchPosts: vi.fn(),
 }))
+
+const mockedFetchPosts = vi.mocked(fetchPosts)
 
 describe('BlogPage', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    testQueryClient.clear()
+  })
+
+  afterEach(() => {
+    cleanup()
   })
 
   it('shows loading state initially', async () => {
-    vi.mocked(client.getPosts).mockReturnValue(new Promise(() => {}))
+    mockedFetchPosts.mockReturnValue(new Promise(() => {}))
     renderWithRouter(<BlogPage />)
     await waitFor(() => {
       expect(screen.getByText('Loading posts...')).toBeInTheDocument()
@@ -36,19 +41,19 @@ describe('BlogPage', () => {
         description: 'A test post',
       },
     ]
-    vi.mocked(client.getPosts).mockResolvedValue(mockPosts)
+    mockedFetchPosts.mockResolvedValue(mockPosts)
     renderWithRouter(<BlogPage />)
     expect(await screen.findByText('Test Post')).toBeInTheDocument()
   })
 
   it('displays error message on failure', async () => {
-    vi.mocked(client.getPosts).mockRejectedValue(new Error('Network error'))
+    mockedFetchPosts.mockRejectedValue(new Error('Network error'))
     renderWithRouter(<BlogPage />)
     expect(await screen.findByText(/Error: Network error/)).toBeInTheDocument()
   })
 
   it('displays empty state when no posts', async () => {
-    vi.mocked(client.getPosts).mockResolvedValue([])
+    mockedFetchPosts.mockResolvedValue([])
     renderWithRouter(<BlogPage />)
     expect(await screen.findByText('No posts available yet.')).toBeInTheDocument()
   })

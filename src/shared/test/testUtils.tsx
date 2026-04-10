@@ -1,6 +1,15 @@
 import { RouterProvider, createMemoryHistory, createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render } from '@testing-library/react'
 import type { ReactElement } from 'react'
+
+export const testQueryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+})
 
 export function renderWithRouter(ui: ReactElement, { initialEntries = ['/'] }: { initialEntries?: string[] } = {}) {
   const rootRoute = createRootRoute({
@@ -20,5 +29,9 @@ export function renderWithRouter(ui: ReactElement, { initialEntries = ['/'] }: {
     history: createMemoryHistory({ initialEntries }),
   })
 
-  return render(<RouterProvider router={router} />)
+  return render(
+    <QueryClientProvider client={testQueryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  )
 }
