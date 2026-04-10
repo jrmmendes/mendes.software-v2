@@ -8,17 +8,18 @@ Personal portfolio site built with React, Vite, TypeScript, Stitches and TanStac
 
 ## Architecture
 
-This project follows a loose version of **Atomic Design**, organized into four layers:
+This project follows **Feature Sliced Architecture**, organized into four layers:
 
 ```
 src/
-├── components/   # Reusable UI building blocks
-├── widgets/      # Feature-specific compositions
-├── pages/        # Full page compositions
-└── routes/       # Router wiring (thin layer)
+├── app/           # Router wiring (thin layer)
+├── entities/      # Domain models and data fetching
+├── pages/         # Full page compositions
+├── shared/ui/     # Reusable UI building blocks
+└── widgets/       # Feature-specific compositions
 ```
 
-### Components
+### shared/ui
 
 The foundation layer. These are reusable, self-contained UI elements that map closely to raw HTML elements but with design-system tokens applied via Stitches.
 
@@ -31,41 +32,56 @@ The foundation layer. These are reusable, self-contained UI elements that map cl
 
 Components are pure visual elements. They receive props and render — no business logic, no data fetching.
 
-### Widgets
+### widgets
 
 Widgets compose multiple components into domain-specific building blocks. They handle layout coordination and data presentation but remain agnostic to page context.
 
 - `ResumeEntry` — composes `Flex`, `Typography`, `List` to render a single resume item
+- `PostCard` — blog post preview card with title, excerpt, date, and cover image
+- `PostList` — paginated list of `PostCard` components
+- `List` — list container with `inline` and `details` variants
+- `ScrollableCard` — card with horizontal scroll for content overflow
 
 Widgets are the "molecules/organisms" of the system: they know *what* they display but not *where* they appear.
 
-### Pages
+### pages
 
 Pages are full-screen compositions that wire widgets and components together. They own data (static or fetched) and define the complete layout of a route.
 
 - `HomePage` — link-tree landing page
 - `ResumePage` — professional experience page
+- `BlogPage` — DEV.to blog posts with data fetching
 - `ToolsPage` — placeholder page
 
 Pages are the "templates" of the system: they assemble widgets and components into a complete user experience.
 
-### Routes
+### app
 
 The thinnest possible layer. Route files only connect TanStack Router to page components — no JSX, no logic.
 
 ```tsx
-// src/routes/index.tsx
+// src/app/index.tsx
 import { createFileRoute } from '@tanstack/react-router'
-import { HomePage } from '../pages/HomePage'
+import { HomePage } from '../pages/HomePage/HomePage'
 
 export const Route = createFileRoute('/')({
   component: HomePage,
 })
 ```
 
+### entities
+
+Domain models and data fetching layer. Contains business logic and API integrations.
+
+- `Post` — blog post entity with type definitions and DEV.to API client
+  - `model.ts` — TypeScript interfaces for post data
+  - `api.ts` — fetch functions for DEV.to articles
+
+Entities are the "domain layer" of the system: they define what the application works with.
+
 ## Design Tokens
 
-All styling flows through Stitches tokens defined in `src/styles/stitches.config.ts`:
+All styling flows through Stitches tokens defined in `src/shared/styles/stitches.config.ts`:
 
 | Category | Tokens |
 |---|---|
@@ -79,7 +95,7 @@ All styling flows through Stitches tokens defined in `src/styles/stitches.config
 
 ## Tech Stack
 
-- **React 18** + **TypeScript**
+- **React 18** + **TypeScript 5.5**
 - **Vite 5** — build tool and dev server
 - **Stitches** — CSS-in-JS with design tokens
 - **TanStack Router** — file-based routing
