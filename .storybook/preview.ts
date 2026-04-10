@@ -1,8 +1,8 @@
 import type { Decorator, Preview } from '@storybook/react'
 import React, { useEffect, useState } from 'react'
 
-import { globalStyles } from '../src/styles/globalStyles'
-import { getCssText } from '../src/styles/stitches.config'
+import { globalStyles } from '../src/shared/styles/globalStyles'
+import { getCssText } from '../src/shared/styles/stitches.config'
 
 globalStyles()
 

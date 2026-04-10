@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ToolsPage > renders 1`] = `
+<div>
+  <main
+    class="c-jtSyHG"
+  >
+    <section
+      class="c-hkZtCm c-gDDgkD"
+    >
+      <h1>
+        Test
+      </h1>
+    </section>
+  </main>
+</div>
+`;

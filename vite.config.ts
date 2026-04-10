@@ -7,7 +7,7 @@ import type { PreRenderedAsset } from "rollup";
 
 export default defineConfig({
   plugins: [
-    tanstackRouter({ target: "react", routesDirectory: "./src/infra/routes" }),
+    tanstackRouter({ target: "react", routesDirectory: "./src/app" }),
     react(),
   ],
   resolve: {
@@ -18,7 +18,7 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     globals: true,
-    setupFiles: ["./src/infra/test/setup.ts"],
+    setupFiles: ["./src/shared/test/setup.ts"],
     include: ["**/*.tests.tsx"],
   },
   build: {
